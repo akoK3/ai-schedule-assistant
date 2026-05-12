@@ -68,7 +68,7 @@ function toggleVoice() {
   recognition.lang = 'en-US';
   recognition.speechRecognitionList = null; 
   recognition.maxAlternatives = 1; 
-  recognition.continuous = true;
+  recognition.continuous = false;
   recognition.interimResults = false;
 
   recognition.onstart = () => {
