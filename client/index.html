@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Schedule Assistant</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#7c83fd">
+</head>
+<body class="auth-page">
+
+  <div class="auth-container">
+    <h1>🗓️ AI Schedule Assistant</h1>
+    <p class="subtitle">Your voice-powered personal scheduler</p>
+
+    <div class="tab-buttons">
+      <button class="tab-btn active" onclick="showTab('login')">Login</button>
+      <button class="tab-btn" onclick="showTab('register')">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-tab">
+      <input type="email" id="login-email" placeholder="Email"/>
+      <input type="password" id="login-password" placeholder="Password"/>
+      <button class="primary-btn" onclick="login()">Login</button>
+    </div>
+
+    <!-- Register Form -->
+    <div id="register-tab" style="display:none">
+      <input type="email" id="reg-email" placeholder="Email"/>
+      <input type="password" id="reg-password" placeholder="Password"/>
+      <button class="primary-btn" onclick="register()">Create Account</button>
+    </div>
+
+    <p id="auth-error" class="error-msg"></p>
+  </div>
+
+  <script src="js/auth.js"></script>
+  
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>

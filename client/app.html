@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Schedule Assistant</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#7c83fd">
+</head>
+<body class="dashboard">
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <h2>🗓️ AI Schedule Assistant</h2>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+
+  <!-- Chat Panel (left) -->
+  <div class="chat-panel">
+    <h3>💬 AI Assistant</h3>
+    <div class="chat-messages" id="chat-messages">
+      <div class="chat-msg ai">Hey! Tell me what to add to your schedule, or ask what you have coming up.</div>
+    </div>
+    <div class="chat-input-row">
+      <input type="text" id="chat-input" placeholder="e.g. add meeting tomorrow at 3pm..." onkeydown="if(event.key==='Enter') sendMessage()"/>
+      <button class="icon-btn" onclick="sendMessage()">➤</button>
+      <button class="icon-btn" id="voice-btn" onclick="toggleVoice()">🎤</button>
+    </div>
+  </div>
+
+  <!-- Events Panel (right) -->
+  <div class="events-panel">
+    <h3>📅 Upcoming Events</h3>
+    <div id="events-list">
+      <p style="color:#888; font-size:14px">No events yet. Try telling the AI to add one!</p>
+    </div>
+  </div>
+
+  <!-- Toast Notifications -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script src="js/socket.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/chat.js"></script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js');
+    }
+  </script>
+</body>
+</html>
