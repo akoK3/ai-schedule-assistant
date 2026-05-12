@@ -78,9 +78,10 @@ function toggleVoice() {
   };
 
   recognition.onresult = (event) => {
-    const transcript = event.results[0][0].transcript;
-    document.getElementById('chat-input').value = transcript;
-    sendMessage(); // automatically send after voice input
+  const transcript = event.results[0][0].transcript;
+  document.getElementById('chat-input').value = transcript;
+  recognition.stop();
+  sendMessage();
   };
 
   recognition.onend = () => {
