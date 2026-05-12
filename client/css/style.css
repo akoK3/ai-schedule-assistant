@@ -300,3 +300,39 @@ input:focus {
   gap: 8px;
   height: 0; /* add this line */
 }
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 1fr;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .chat-panel {
+    height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #333;
+  }
+
+  .chat-messages {
+    height: 0;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .events-panel {
+    height: 50vh;
+    overflow-y: auto;
+  }
+
+  .topbar h2 {
+    font-size: 14px;
+  }
+
+  .event-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
