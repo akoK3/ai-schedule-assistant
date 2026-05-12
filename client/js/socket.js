@@ -1,5 +1,5 @@
 const userId = localStorage.getItem('userId');
-const socketUrl = 'http://localhost:3000';
+const socketUrl = window.location.origin;
 
 const socket = io(socketUrl);
 

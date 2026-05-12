@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api';
+const API = '/api';
 const token = localStorage.getItem('token');
 
 // redirect to login if no token

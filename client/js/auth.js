@@ -1,4 +1,4 @@
-const API = 'http://localhost:3000/api';
+const API = '/api';
 
 function showTab(tab) {
   document.getElementById('login-tab').style.display = tab === 'login' ? 'block' : 'none';
